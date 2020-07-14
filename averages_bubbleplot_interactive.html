@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.8.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-cae6403eebf9d4e3f15c8418c4f50d09"}, "mark": "circle", "encoding": {"color": {"type": "quantitative", "field": "Ratio Deaths to Cases"}, "size": {"type": "quantitative", "field": "Ratio Deaths to Cases"}, "tooltip": [{"type": "nominal", "field": "Country"}, {"type": "quantitative", "field": "Cases"}, {"type": "quantitative", "field": "Deaths"}], "x": {"type": "quantitative", "field": "Health"}, "y": {"type": "quantitative", "field": "Cases"}}, "selection": {"selector034": {"type": "interval", "bind": "scales", "encodings": ["x", "y"]}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-cae6403eebf9d4e3f15c8418c4f50d09": [{"Country": "Bangladesh", "Year": 2000.5, "Cases": 140.33333333333334, "Deaths": 0.4234166666666666, "Health": 28.10833333333333, "Ratio Deaths to Cases": 0.3017220902612826}, {"Country": "Cambodia", "Year": 2000.5, "Cases": 650.1666666666666, "Deaths": 4.491666666666666, "Health": 5.94, "Ratio Deaths to Cases": 0.6908485003845167}, {"Country": "China", "Year": 2000.5, "Cases": 5.8566666666666665, "Deaths": 0.003120000000000001, "Health": 19.833333333333332, "Ratio Deaths to Cases": 0.05327262379055209}, {"Country": "Lao", "Year": 2000.5, "Cases": 1108.8333333333333, "Deaths": 6.267083333333333, "Health": 5.5575, "Ratio Deaths to Cases": 0.5651961521118293}, {"Country": "Malaysia", "Year": 2000.5, "Cases": 84.35833333333333, "Deaths": 0.13546666666666668, "Health": 87.29166666666667, "Ratio Deaths to Cases": 0.1605848068754322}, {"Country": "Namibia", "Year": 2000.5, "Cases": 22091.666666666668, "Deaths": 45.89166666666666, "Health": 94.16666666666667, "Ratio Deaths to Cases": 0.20773293096944545}, {"Country": "Nigeria", "Year": 2000.5, "Cases": 1816.4166666666667, "Deaths": 4.033333333333332, "Health": 10.656666666666666, "Ratio Deaths to Cases": 0.22204890581272646}, {"Country": "Papua New Guinea", "Year": 2000.5, "Cases": 15084.166666666666, "Deaths": 10.733333333333334, "Health": 24.291666666666668, "Ratio Deaths to Cases": 0.07115628970775097}, {"Country": "Philippines", "Year": 2000.5, "Cases": 56.21666666666667, "Deaths": 0.524, "Health": 14.949999999999998, "Ratio Deaths to Cases": 0.9321079158019567}, {"Country": "Solomon Islands", "Year": 2000.5, "Cases": 19200.0, "Deaths": 9.378333333333334, "Health": 48.175000000000004, "Ratio Deaths to Cases": 0.048845486111111114}, {"Country": "South Africa", "Year": 2000.5, "Cases": 53.73333333333335, "Deaths": 0.3638333333333333, "Health": 119.78333333333335, "Ratio Deaths to Cases": 0.6771091811414389}, {"Country": "Vietnam", "Year": 2000.5, "Cases": 138.17499999999998, "Deaths": 0.16244166666666668, "Health": 7.545833333333333, "Ratio Deaths to Cases": 0.11756227006815032}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
